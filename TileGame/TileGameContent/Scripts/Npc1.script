@@ -1,0 +1,27 @@
+﻿<Conversations>
+  <Conversation Name="Greetings">
+    <Text>Hello Friend!</Text>
+    <Handlers>
+      <Handler Caption="Greetings" Action="StartConversation:Quest1" />
+    </Handlers>
+  </Conversation>
+  <Conversation Name="Quest1">
+    <Text>There are some people up to no good over by the park.  Can you handle this?</Text>
+    <Handlers>
+      <Handler Caption="Yes" Action="StartConversation:ThankYou" />
+      <Handler Caption="No" Action="StartConversation:OhWell" />
+    </Handlers>
+  </Conversation>
+  <Conversation Name="ThankYou">
+    <Text>Thank You!</Text>
+    <Handlers>
+      <Handler Caption="Continue" Action="SetProperty:Following,true;RemoveConversation:Quest1;EndConversation" />
+    </Handlers>
+  </Conversation>
+  <Conversation Name="OhWell">
+    <Text>Oh Well.</Text>
+    <Handlers>
+      <Handler Caption="Continue" Action="SetProperty:Following,false;EndConversation" />
+    </Handlers>
+  </Conversation>
+</Conversations>
